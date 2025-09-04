@@ -1,0 +1,130 @@
+/* =================== SignUpPage.css =================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Container with floating, 3D card effect */
+.signup-container {
+  position: relative;
+  max-width: 460px;
+  width: 100%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.signup-container:hover {
+  transform: perspective(800px) rotateX(5deg) rotateY(-5deg);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) perspective(800px); }
+  50% { transform: translateY(-15px) perspective(800px); }
+}
+
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #222;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  animation: fadeInDown 1s ease forwards;
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels with slide-in animation */
+.signup-form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+  letter-spacing: 0.5px;
+  transform: translateX(-5px);
+  animation: slideInLeft 0.6s ease forwards;
+}
+
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Inputs with glowing focus effect */
+.signup-form input {
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 2px solid #bbb;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.signup-form input:focus {
+  border-color: #ff416c;
+  box-shadow: 0 0 12px rgba(255,65,108,0.6);
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* Buttons with neon gradient and 3D hover */
+.signup-form button {
+  background: linear-gradient(45deg, #36d1dc, #5b86e5);
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: all 0.4s ease, transform 0.2s ease;
+}
+
+.signup-form button:hover {
+  transform: translateY(-3px) scale(1.05) rotateZ(1deg);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3), 0 0 15px rgba(91,134,229,0.6);
+  background: linear-gradient(60deg, #5b86e5, #36d1dc);
+  animation: neonGlow 1s ease infinite alternate;
+}
+
+@keyframes neonGlow {
+  0% { box-shadow: 0 12px 25px rgba(0,0,0,0.3), 0 0 10px rgba(91,134,229,0.6); }
+  100% { box-shadow: 0 12px 35px rgba(0,0,0,0.35), 0 0 20px rgba(91,134,229,0.9); }
+}
+
+/* Smooth fade-in for inputs and button */
+.signup-form input, .signup-form button {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.signup-form input:nth-child(1) { animation-delay: 0.2s; }
+.signup-form input:nth-child(2) { animation-delay: 0.4s; }
+.signup-form input:nth-child(3) { animation-delay: 0.6s; }
+.signup-form button { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

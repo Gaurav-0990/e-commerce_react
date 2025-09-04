@@ -1,0 +1,110 @@
+/* ===================== Nav Styles ===================== */
+nav {
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(135deg, #ffffff, #f0f4ff);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav:hover {
+  background: linear-gradient(135deg, #f0f4ff, #e0ebff);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* ===================== Left Logo ===================== */
+.left h2 {
+  color: #007bff;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.left h2:hover {
+  color: #0056b3;
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.left a {
+  text-decoration: none;
+}
+
+/* ===================== Search ===================== */
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 32px;
+}
+
+.search input[type="text"] {
+  width: 500px;
+  padding: 10px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.search input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 4px 16px rgba(0,123,255,0.3);
+  transform: scale(1.02);
+}
+
+.search i {
+  background: #007bff;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.search i:hover {
+  background: #0056b3;
+  transform: scale(1.1) rotate(10deg);
+}
+
+/* ===================== Right Buttons ===================== */
+.right a {
+  background: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.right a:hover {
+  background: #0056b3;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+  .search input[type="text"] {
+    width: 250px;
+  }
+
+  nav {
+    padding: 0 16px;
+  }
+}
